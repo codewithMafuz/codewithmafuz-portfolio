@@ -1,9 +1,4 @@
 import React from 'react';
-// import { FaReact } from 'react-icons/fa';
-// import { LuGraduationCap } from 'react-icons/lu';
-// import { IoSchoolOutline } from "react-icons/io5";
-// import { CgWorkAlt } from "react-icons/cg";
-// import { BiLogoReact } from "react-icons/bi";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { FaComputer } from "react-icons/fa6";
 
@@ -81,14 +76,6 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-    {
-        id: 1,
-        title: 'CorpComment',
-        description: 'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
-        tags: ['HTML/CSS/JavaScript', 'React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
-        imageUrl: '/corpcomment.png',
-        projectUrl: null,
-    },
     {
         id: 2,
         title: 'Movbixer',
