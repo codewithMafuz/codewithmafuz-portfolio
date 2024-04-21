@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { useThemeContextProvider } from '../../context/themeContext'
+import { useThemeContextProvider } from '../context/themeContext'
 import { BiSun, BiMoon } from "react-icons/bi";
 import { motion } from 'framer-motion'
 

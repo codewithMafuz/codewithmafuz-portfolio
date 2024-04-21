@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { links } from '@/lib/data';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { useActiveSectionContext } from '../../context/activeSectionContext';
+import { useActiveSectionContext } from '../context/activeSectionContext';
 export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
 

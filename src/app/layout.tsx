@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import ActiveSectionContextProvider from '../../context/activeSectionContext';
+import ActiveSectionContextProvider from '../context/activeSectionContext';
 import { Toaster } from 'react-hot-toast';
-import ThemeContextProvider from '../../context/themeContext';
+import ThemeContextProvider from '../context/themeContext';
 import ThemeButton from '@/components/themeButton';
 
 const inter = Inter({ subsets: ['latin'] });

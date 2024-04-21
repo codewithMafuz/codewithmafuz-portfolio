@@ -6,7 +6,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '../lib/data';
 import ExperienceContent from './experienceContent';
-import { useThemeContextProvider } from '../../context/themeContext';
+import { useThemeContextProvider } from '../context/themeContext';
 
 function Experience() {
     const { theme } = useThemeContextProvider()
