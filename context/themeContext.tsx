@@ -21,6 +21,7 @@ const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
         } else {
             window.document.documentElement.classList.remove("dark")
         }
+        window.localStorage.setItem("theme", theme)
         setTheme(theme)
     }
 

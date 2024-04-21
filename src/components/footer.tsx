@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer
       id='footer'
-      className="flex flex-col items-center text-center text-surface dark:text-white">
+      className="flex flex-col items-center text-center text-surface bg-transparent dark:text-white">
       <div className="container pt-9">
         <div className="mb-6 flex justify-center space-x-2">
           <a
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full bg-black/5 p-4 text-center">
+      <div className="w-full bg-transparent p-4 text-center">
         © 2024 Copyright:
         <a href="#footer">codewithmafuz-portfolio</a>
       </div>
