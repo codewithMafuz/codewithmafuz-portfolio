@@ -14,25 +14,34 @@ export const ThemeContext = createContext<any>(null)
 
 const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [theme, setTheme] = useState<ThemeType>('light')
-
+    const [systemTheme, setSystemTheme] = useState<ThemeType>("light")
     const handleSetTheme = (theme: ThemeType) => {
-        if (theme === "dark") {
-            window.document.documentElement.classList.add("dark")
-        } else {
-            window.document.documentElement.classList.remove("dark")
-        }
-        window.localStorage.setItem("theme", theme)
-        setTheme(theme)
+        window.document.documentElement.classList.toggle("dark", theme === "dark");
+        setTheme(theme);
+    };
+
+    const handleSetSystemTheme = (ev: MediaQueryListEvent) => {
+        setSystemTheme(ev.matches ? "dark" : "light")
+
+    }
+
+    const hasLocalStorageTheme = () => {
+        const localStorageTheme = window.localStorage.getItem("theme")
+        return (localStorageTheme === "dark" || localStorageTheme === "light") ? localStorageTheme : false
     }
 
     useEffect(() => {
-        const isPrefersModeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const prefered = isPrefersModeDark ? "dark" : "light"
-        const themeIs: any = window.localStorage.getItem("theme") || prefered || "light"
-        handleSetTheme(themeIs)
-
+        if (!hasLocalStorageTheme()) {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleSetSystemTheme)
+            return () => {
+                window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", handleSetSystemTheme)
+            }
+        }
     }, [])
 
+    useEffect(() => {
+        handleSetTheme(hasLocalStorageTheme() || systemTheme || "light")
+    }, [systemTheme])
 
     const state = {
         theme,
@@ -60,3 +69,5 @@ export const useThemeContextProvider = () => {
     }
     return context
 }
+
+
